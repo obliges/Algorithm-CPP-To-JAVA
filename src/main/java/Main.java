@@ -5,7 +5,7 @@ import static java.lang.Math.min;
 
 
 public class Main {
-
+ 
     public static int n;
     public static int[][] info = new int[1000][3];
     public static int[][] dp = new int[1000][3];
