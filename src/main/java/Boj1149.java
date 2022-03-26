@@ -1,11 +1,12 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 import static java.lang.Math.min;
 
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1149
+public class Boj1149 {
     public static int n;
     public static int[][] info = new int[1000][3];
     public static int[][] dp = new int[1000][3];
@@ -45,6 +46,4 @@ public class Main {
 
         return dp[cur][mask] = info[cur][mask] + min(min(temp1, temp2), temp3);
     }
-
-
 }
