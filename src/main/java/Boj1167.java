@@ -9,7 +9,7 @@ import static java.lang.Integer.parseInt;
 // https://www.acmicpc.net/problem/1167
 public class Boj1167 {
     static int v;
-    static ArrayList<ArrayList<Main.Edge>> a = new ArrayList<>();
+    static ArrayList<ArrayList<Edge>> a = new ArrayList<>();
     static int[] visit = new int[100001];
     static int maximum = -1;
     static int maxindex = -1;
@@ -46,7 +46,7 @@ public class Boj1167 {
             int y = parseInt(st.nextToken());
             while (y != - 1) {
                 int z = parseInt(st.nextToken());
-                a.get(x).add(new Main.Edge(y, z));
+                a.get(x).add(new Edge(y, z));
                 y = parseInt(st.nextToken());
             }
         }
@@ -64,7 +64,7 @@ public class Boj1167 {
     private static void dfs(int k, int sum) {
         boolean isLast = true;
         visit[k] = 1;
-        for (Main.Edge edge : a.get(k)) {
+        for (Edge edge : a.get(k)) {
             int dest = edge.getDest();
             int dist = edge.getDist();
             if (visit[dest] == 0) {

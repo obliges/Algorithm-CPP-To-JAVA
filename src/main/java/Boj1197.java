@@ -1,19 +1,21 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+import java.util.StringTokenizer;
 
 import static java.lang.Integer.parseInt;
-import static java.lang.Math.min;
 
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1197
+public class Boj1197 {
     static int v;
     static int e;
-    static ArrayList<ArrayList<Edge>> a = new ArrayList<>();
+    static ArrayList<ArrayList<Main.Edge>> a = new ArrayList<>();
     static int[] visit = new int[10001];
-    static PriorityQueue<Edge> queue = new PriorityQueue<>();
+    static PriorityQueue<Main.Edge> queue = new PriorityQueue<>();
 
-    static class Edge implements Comparable<Edge> {
+    static class Edge implements Comparable<Main.Edge> {
         int cost;
         int to;
 
@@ -31,8 +33,8 @@ public class Main {
         }
 
         @Override
-        public int compareTo(Edge o) {
-           return Integer.compare(this.getCost(), o.getCost());
+        public int compareTo(Main.Edge o) {
+            return Integer.compare(this.getCost(), o.getCost());
         }
 
     }
@@ -52,17 +54,17 @@ public class Main {
             x = parseInt(st.nextToken());
             y = parseInt(st.nextToken());
             z = parseInt(st.nextToken());
-            a.get(x).add(new Edge(z, y));
-            a.get(y).add(new Edge(z, x));
+            a.get(x).add(new Main.Edge(z, y));
+            a.get(y).add(new Main.Edge(z, x));
         }
         int output = 0;
         int numEdge = 0;
         visit[1]++;
-        for (Edge edge : a.get(1)) {
+        for (Main.Edge edge : a.get(1)) {
             queue.add(edge);
         }
         while (!queue.isEmpty() && numEdge != v - 1) {
-            Edge next = null;
+            Main.Edge next = null;
             while (!queue.isEmpty()) {
                 next = queue.poll();
                 if (visit[next.getTo()] == 0) {
@@ -71,7 +73,7 @@ public class Main {
             }
             output += next.getCost();
             visit[next.getTo()]++;
-            for (Edge edge : a.get(next.getTo())) {
+            for (Main.Edge edge : a.get(next.getTo())) {
                 queue.add(edge);
             }
             numEdge++;
@@ -79,6 +81,4 @@ public class Main {
         System.out.println(output);
 
     }
-
-
 }
