@@ -1,9 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-
-
-public class Main {
+// https://www.acmicpc.net/problem/1300
+public class Boj1300 {
 
     static long n, k;
 
@@ -32,5 +32,4 @@ public class Main {
             return findMin(mid + 1, finish);
         }
     }
-
 }

@@ -11,17 +11,17 @@ import static java.lang.Integer.parseInt;
 public class Boj1197 {
     static int v;
     static int e;
-    static ArrayList<ArrayList<Main.Edge>> a = new ArrayList<>();
+    static ArrayList<ArrayList<Edge>> a = new ArrayList<>();
     static int[] visit = new int[10001];
-    static PriorityQueue<Main.Edge> queue = new PriorityQueue<>();
+    static PriorityQueue<Edge> queue = new PriorityQueue<>();
 
-    static class Edge implements Comparable<Main.Edge> {
+    static class Edge implements Comparable<Edge> {
         int cost;
         int to;
 
         public Edge(int cost, int to) {
-            this.cost = cost;
-            this.to = to;
+            this.cost =cost;
+            this.to =to;
         }
 
         public int getCost() {
@@ -33,7 +33,7 @@ public class Boj1197 {
         }
 
         @Override
-        public int compareTo(Main.Edge o) {
+        public int compareTo(Edge o) {
             return Integer.compare(this.getCost(), o.getCost());
         }
 
@@ -54,17 +54,17 @@ public class Boj1197 {
             x = parseInt(st.nextToken());
             y = parseInt(st.nextToken());
             z = parseInt(st.nextToken());
-            a.get(x).add(new Main.Edge(z, y));
-            a.get(y).add(new Main.Edge(z, x));
+            a.get(x).add(new Edge(z, y));
+            a.get(y).add(new Edge(z, x));
         }
         int output = 0;
         int numEdge = 0;
         visit[1]++;
-        for (Main.Edge edge : a.get(1)) {
+        for (Edge edge : a.get(1)) {
             queue.add(edge);
         }
         while (!queue.isEmpty() && numEdge != v - 1) {
-            Main.Edge next = null;
+            Edge next = null;
             while (!queue.isEmpty()) {
                 next = queue.poll();
                 if (visit[next.getTo()] == 0) {
@@ -73,7 +73,7 @@ public class Boj1197 {
             }
             output += next.getCost();
             visit[next.getTo()]++;
-            for (Main.Edge edge : a.get(next.getTo())) {
+            for (Edge edge : a.get(next.getTo())) {
                 queue.add(edge);
             }
             numEdge++;
