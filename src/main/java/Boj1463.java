@@ -1,10 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1463
+public class Boj1463 {
     static int[] dp = new int[1000001];
 
     public static void main(String[] args) throws IOException {
@@ -28,7 +27,4 @@ public class Main {
         System.out.println(dp[n]);
 
     }
-
-
 }
-
