@@ -1,10 +1,10 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
-
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1520
+public class Boj1520 {
     static int n, m;
     static int[][] map = new int[500][500];
     static int[][] dp = new int[500][500];
@@ -56,7 +56,4 @@ public class Main {
         dp[r][c] = sum;
         return sum;
     }
-
-
 }
-
