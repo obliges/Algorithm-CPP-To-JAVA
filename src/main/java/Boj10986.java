@@ -1,10 +1,8 @@
 import java.io.*;
-import java.util.*;
+import java.util.StringTokenizer;
 
-
-
-public class Main {
-
+// https://www.acmicpc.net/problem/10986
+public class Boj10986 {
     static int n, m;
     static long[] rest = new long[1000];
 
@@ -32,7 +30,4 @@ public class Main {
         br.close();
         bw.close();
     }
-
-
 }
-
