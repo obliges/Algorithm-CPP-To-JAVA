@@ -1,10 +1,11 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 
-
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1644
+public class Boj1644 {
     static int n;
     static int[] prime = new int[4000001];
     static Queue<Integer> q = new LinkedList<>();
@@ -44,8 +45,4 @@ public class Main {
 
 
     }
-
-
-
 }
-
