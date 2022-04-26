@@ -1,10 +1,7 @@
 import java.io.*;
-import java.util.*;
 
-
-
-public class Main {
-
+// https://www.acmicpc.net/problem/1676
+public class Boj1676 {
     static int n;
 
     public static void main(String[] args) throws IOException {
@@ -15,7 +12,4 @@ public class Main {
         System.out.println(n / 125 + n / 25 + n / 5);
 
     }
-
-
 }
-
