@@ -1,10 +1,12 @@
-import java.io.*;
-import java.sql.SQLOutput;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
 
-
-
-public class Main {
+// https://www.acmicpc.net/problem/1707
+public class Boj1707 {
     static int k, v, e;
     static ArrayList<ArrayList<Integer>> a;
     static int[] visit;
@@ -80,6 +82,4 @@ public class Main {
         }
 
     }
-
 }
-
